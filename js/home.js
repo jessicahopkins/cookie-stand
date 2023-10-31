@@ -1,6 +1,8 @@
 const seattle = {
   name: "Seattle",
-  phoneNumbers: ["Main: 555-1212", "Fax: 555-6363"],
+  hours: "6am - 7pm",
+  phoneNumbers: ["123-456-7890"],
+  location: "2901 3rd Ave #300, Seattle, WA 98121",
   render: function() {
     // Looks for any element with an id="root", i.e.
     // <section id="root">
@@ -25,7 +27,7 @@ const seattle = {
     for( let i=0; i<this.phoneNumbers.length; i++ ) {
       const phoneItem = document.createElement('li');
       // Add the actual number, from the store object
-      phoneItem.textContent = this.phoneNumbers[i];
+      phoneItem.textContent = this.phoneNumbers;
       // Append that to the UL
       storeDataList.appendChild(phoneItem);
     }
@@ -34,7 +36,7 @@ const seattle = {
 
 const tokyo = {
   name: "Tokyo",
-  phoneNumbers: ["Main: 333-1212", "Fax: 333-6363"],
+  phoneNumbers: ["222-222-2222"],
   render: function() {
     // Looks for any element with an id="root", i.e.
     // <section id="root">
@@ -67,7 +69,7 @@ const tokyo = {
 
 const dubai = {
   name: "Dubai",
-  phoneNumbers: ["Main: 555-1212", "Fax: 555-6363"],
+  phoneNumbers: ["333-333-3333"],
   render: function() {
     // Looks for any element with an id="root", i.e.
     // <section id="root">
@@ -102,7 +104,7 @@ const dubai = {
 
 const paris = {
   name: "Paris",
-  phoneNumbers: ["Main: 555-1212", "Fax: 555-6363"],
+  phoneNumbers: ["444-444-4444"],
   render: function() {
     // Looks for any element with an id="root", i.e.
     // <section id="root">
@@ -136,7 +138,7 @@ const paris = {
 
 const lima = {
   name: "Lima",
-  phoneNumbers: ["Main: 555-1212", "Fax: 555-6363"],
+  phoneNumbers: ["555-555-5555"],
   render: function() {
     // Looks for any element with an id="root", i.e.
     // <section id="root">
