@@ -2,20 +2,22 @@
 
 ## Salmon Cookies
 
-I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+I'm in the process of building an app to display Sales Data for Pat's Salmon Cookies.
 
 ### Author: Jessica Hopkins
 
 ### Links and Resources
 
-* [submission PR](http://xyz.com)
-* Any Links you used as reference
+* [seattle-code-201d110](https://github.com/codefellows/seattle-code-201d110/tree/main)
+* [Chat GPT](https://chat.openai.com/share/0f5916d3-dd0a-45d9-8e10-06abc216e9b9)
 
 ### Lighthouse Accessibility Report Score
 
 * Provide a screenshot of your score after running a Lighthouse Accessibility report.
+![Lighthouse Accessibility Screenshot](img/Lighthouse%2010-30-2023%20lab%2006.jpgLight)
+
 
 ### Reflections and Comments
 
-* Consider including the answers to your daily journal and submission questions here
-* This is also a good place to reflect on the tools and resources used and learned
+* Stuck on #5 of Sales Data page.  Unable to get to print output for Seattle.  Was trying to get one city to work and then would complete the other cities. 
+* Relied heavily on Chat GPT, however, was still unable to complete.  Also, worked with classmate Lana during lab hours to bounce idea's off of.
