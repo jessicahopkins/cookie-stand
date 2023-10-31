@@ -23,49 +23,51 @@ const seattle = {
   },
 };
 
-seattle.simulateSales();
-
-console.log(`Simulated sales in ${seattle.city} from 6am to 7pm:`);
+// Display Seattle sales data.
+const seattleSalesList = document.getElementById("seattle-sales-list");
 seattle.salesData.forEach(item => {
   const time = item.hour === 12 ? '12pm' : item.hour > 12 ? `${item.hour - 12}pm` : `${item.hour}am`;
-  console.log(`${time}: ${item.cookiesSold} cookies`);
+  const listItem = document.createElement("li");
+  listItem.textContent = `${time}: ${item.cookiesSold} cookies`;
+  seattleSalesList.appendChild(listItem);
 });
+
 
 
 let randomCustomers = seattle.getRandomNumCustomer();
 console.log(`Random number of customers in ${seattle.city}: ${randomCustomers}`);
 
-const tokyo = {
-  city: "Tokyo",
-  minCustomer: 3,
-  maxCustomer: 24,
-  avgCookie: 1.2,
-  salesData: [],
-};
+// const tokyo = {
+//   city: "Tokyo",
+//   minCustomer: 3,
+//   maxCustomer: 24,
+//   avgCookie: 1.2,
+//   salesData: [],
+// };
 
-const dubai = {
-  city: "Dubai",
-  minCustomer: 11,
-  maxCustomer: 38,
-  avgCookie: 3.7,
-  salesData: [],
-};
+// const dubai = {
+//   city: "Dubai",
+//   minCustomer: 11,
+//   maxCustomer: 38,
+//   avgCookie: 3.7,
+//   salesData: [],
+// };
 
-const Paris = {
-  city: "Paris",
-  minCustomer: 20,
-  maxCustomer: 38,
-  avgCookie: 2.3,
-  salesData: [],
-};
+// const Paris = {
+//   city: "Paris",
+//   minCustomer: 20,
+//   maxCustomer: 38,
+//   avgCookie: 2.3,
+//   salesData: [],
+// };
 
-const Lima = {
-  city: "Lima",
-  minCustomer: 2,
-  maxCustomer: 16,
-  avgCookie: 4.6,
-  salesData: [],
-};
+// const Lima = {
+//   city: "Lima",
+//   minCustomer: 2,
+//   maxCustomer: 16,
+//   avgCookie: 4.6,
+//   salesData: [],
+// };
 
 
 
