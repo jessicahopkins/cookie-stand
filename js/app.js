@@ -5,6 +5,7 @@ const seattle = {
   minCustomer: 23,
   maxCustomer: 65,
   avgCookie: 6.3,
+  salesData: [],
 
   getRandomNumCustomer: function() {
     return Math.floor( Math.random() * (this.maxCustomer - this.minCustomer + 1) + this.minCustomer );
@@ -12,20 +13,20 @@ const seattle = {
   },
 
   simulateSales: function() {
-    const sales = [];
+    this.salesData = [];
     for (let hour = 6; hour <= 19; hour++) {
       const customers = this.getRandomNumCustomer();
       const cookiesSold = Math.round(customers * this.avgCookie);
-      sales.push({hour, cookiesSold });
+      this.salesData.push({hour, cookiesSold });
     }
-    return sales;
+
   },
 };
 
-const simulatedSales = seattle.simulateSales();
+seattle.simulateSales();
 
 console.log(`Simulated sales in ${seattle.city} from 6am to 7pm:`);
-simulatedSales.forEach(item => {
+seattle.salesData.forEach(item => {
   const time = item.hour === 12 ? '12pm' : item.hour > 12 ? `${item.hour - 12}pm` : `${item.hour}am`;
   console.log(`${time}: ${item.cookiesSold} cookies`);
 });
@@ -39,6 +40,7 @@ const tokyo = {
   minCustomer: 3,
   maxCustomer: 24,
   avgCookie: 1.2,
+  salesData: [],
 };
 
 const dubai = {
@@ -46,6 +48,7 @@ const dubai = {
   minCustomer: 11,
   maxCustomer: 38,
   avgCookie: 3.7,
+  salesData: [],
 };
 
 const Paris = {
@@ -53,6 +56,7 @@ const Paris = {
   minCustomer: 20,
   maxCustomer: 38,
   avgCookie: 2.3,
+  salesData: [],
 };
 
 const Lima = {
@@ -60,6 +64,7 @@ const Lima = {
   minCustomer: 2,
   maxCustomer: 16,
   avgCookie: 4.6,
+  salesData: [],
 };
 
 
