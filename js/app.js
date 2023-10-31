@@ -30,29 +30,50 @@ const tokyo = {
   }
 }
 
-// const dubai = {
-//   city: "Dubai",
-//   minCustomer: 11,
-//   maxCustomer: 38,
-//   avgCookie: 3.7,
-//   salesData: [],
-// };
+const dubai = {
+  name: "Dubai",
+  phoneNumber: "333-333-333",
+  minCustomersPerHour: 11,
+  maxCustomersPerHour: 38,
+  averageCookies: 3.7,
+  estimatedSales: [],
+  render: function() {
+    renderStore(this);
+  },
+  estimate: function() {
+    this.estimatedSales = estimate(this);
+  }
+}
 
-// const Paris = {
-//   city: "Paris",
-//   minCustomer: 20,
-//   maxCustomer: 38,
-//   avgCookie: 2.3,
-//   salesData: [],
-// };
+const paris = {
+  name: "Paris",
+  phoneNumber: "444-444-4444",
+  minCustomersPerHour: 20,
+  maxCustomersPerHour: 38,
+  averageCookies: 2.3,
+  estimatedSales: [],
+  render: function() {
+    renderStore(this);
+  },
+  estimate: function() {
+    this.estimatedSales = estimate(this);
+  }
+}
 
-// const Lima = {
-//   city: "Lima",
-//   minCustomer: 2,
-//   maxCustomer: 16,
-//   avgCookie: 4.6,
-//   salesData: [],
-// };
+const lima = {
+  name: "Lima",
+  phoneNumber: "555-555-5555",
+  minCustomersPerHour: 2,
+  maxCustomersPerHour: 16,
+  averageCookies: 4.6,
+  estimatedSales: [],
+  render: function() {
+    renderStore(this);
+  },
+  estimate: function() {
+    this.estimatedSales = estimate(this);
+  }
+}
 
 function random(min,max) {
   return Math.floor( Math.random() * (max-min+1)) + min;
@@ -118,6 +139,15 @@ seattle.render();
 
 tokyo.estimate();
 tokyo.render();
+
+dubai.estimate();
+dubai.render();
+
+paris.estimate();
+paris.render();
+
+lima.estimate();
+lima.render();
 
 // Way #2
 // Make an array of stores and loop them.
