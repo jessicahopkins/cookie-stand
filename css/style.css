@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+background-color: white;
+}
+
+header {
+background: black;
+padding: 25pt;
+text-align: center;
+}
+
+h1 {
+color: salmon
+}
+
+nav {
+  background-color: salmon;
+  padding: 15pt;
+}
+
+img {
+  text-align: center;
+}
+
+footer {
+background: grey;
+padding: 15pt;
+}
