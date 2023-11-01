@@ -60,3 +60,39 @@ background: #ccc;
 padding: 1em;
 text-align: center;
 }
+
+table {
+  margin: auto;
+  text-align: center;
+}
+
+table *{
+  border: 1px solid #111;
+}
+
+thead {
+  background-color: grey;
+  color: white;
+}
+
+#tableHead th {
+  border: none;
+}
+
+tbody {
+  background-color: salmon;
+}
+
+th {
+  padding: .25em;
+}
+
+tfoot {
+  background-color: gray;
+  color: white;
+}
+
+#tableFoot td {
+  border: none;
+}
+
