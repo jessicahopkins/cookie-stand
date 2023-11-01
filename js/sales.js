@@ -1,164 +1,203 @@
+
 let hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 
-const seattle = {
-  name: "Seattle",
-  phoneNumber: "123-456-7890",
-  minCustomersPerHour: 23,
-  maxCustomersPerHour: 65,
-  averageCookies: 6.3,
-  estimatedSales: [],
-  render: function() {
-    renderStore(this);
-  },
-  estimate: function() {
-    this.estimatedSales = estimate(this);
-  }
+function CookieStand(name, minCustomersPerHour, maxCustomersPerHour, averageCookies) {
+  this.name = name;
+  this.minCustomersPerHour = minCustomersPerHour
+  this.maxCustomersPerHour = maxCustomersPerHour
+  this.averageCookies = averageCookies
+  this.estimatedSales = [estimatedSales];
 }
 
-const tokyo = {
-  name: "Tokyo",
-  phoneNumber: "222-222-2222",
-  minCustomersPerHour: 3,
-  maxCustomersPerHour: 24,
-  averageCookies: 1.2,
-  estimatedSales: [],
-  render: function() {
-    renderStore(this);
-  },
-  estimate: function() {
-    this.estimatedSales = estimate(this);
-  }
+// This is where I'm stuck...I think a Protype method of the CookieStand constructor should go next but I don't understand his piece.
+
+//Sample code copied from demo example - need to adjust for CookieStand, putting it here to help me try and figure it out.
+let body = document.getElementById("locations");
+   let locationRow = document.createElement('tr');
+   body.appendChild(locationRow);
+
+   let nameCell = document.createElement('td');
+   nameCell.textContent = this.name;
+   locationRow.appendChild(nameCell);
+// I don't think this is needed for CookieStand???
+   let breedCell = document.createElement('td');
+   breedCell.textContent = this.breed;
+   dogRow.appendChild(breedCell);
+
+   for( let i = 0; i < this.isGoodWith.length; i++ ) {
+    let cell = document.createElement("td");
+    cell.textContent = this.isGoodWith[i].toString();
+    dogRow.appendChild(cell);
+   }
+
+// Again copied from demo code example to help me work through this but I'm stuck...
+
+let seattle = new CookieStand();
+let tokyo = new CookieStand();
+
+let state = {
+  locations: [seattle, tokyo]
 }
 
-const dubai = {
-  name: "Dubai",
-  phoneNumber: "333-333-333",
-  minCustomersPerHour: 11,
-  maxCustomersPerHour: 38,
-  averageCookies: 3.7,
-  estimatedSales: [],
-  render: function() {
-    renderStore(this);
-  },
-  estimate: function() {
-    this.estimatedSales = estimate(this);
-  }
-}
+seattle.render();
+tokyo.render();
 
-const paris = {
-  name: "Paris",
-  phoneNumber: "444-444-4444",
-  minCustomersPerHour: 20,
-  maxCustomersPerHour: 38,
-  averageCookies: 2.3,
-  estimatedSales: [],
-  render: function() {
-    renderStore(this);
-  },
-  estimate: function() {
-    this.estimatedSales = estimate(this);
-  }
-}
+// Original object literals and code to add estimates to list
 
-const lima = {
-  name: "Lima",
-  phoneNumber: "555-555-5555",
-  minCustomersPerHour: 2,
-  maxCustomersPerHour: 16,
-  averageCookies: 4.6,
-  estimatedSales: [],
-  render: function() {
-    renderStore(this);
-  },
-  estimate: function() {
-    this.estimatedSales = estimate(this);
-  }
-}
+// const seattle = {
+//   name: "Seattle",
+//   minCustomersPerHour: 23,
+//   maxCustomersPerHour: 65,
+//   averageCookies: 6.3,
+//   estimatedSales: [],
+//   render: function() {
+//     renderStore(this);
+//   },
+//   estimate: function() {
+//     this.estimatedSales = estimate(this);
+//   }
+// }
 
-function random(min,max) {
-  return Math.floor( Math.random() * (max-min+1)) + min;
-}
+// const tokyo = {
+//   name: "Tokyo",
+//   minCustomersPerHour: 3,
+//   maxCustomersPerHour: 24,
+//   averageCookies: 1.2,
+//   estimatedSales: [],
+//   render: function() {
+//     renderStore(this);
+//   },
+//   estimate: function() {
+//     this.estimatedSales = estimate(this);
+//   }
+// }
+
+// const dubai = {
+//   name: "Dubai",
+//   minCustomersPerHour: 11,
+//   maxCustomersPerHour: 38,
+//   averageCookies: 3.7,
+//   estimatedSales: [],
+//   render: function() {
+//     renderStore(this);
+//   },
+//   estimate: function() {
+//     this.estimatedSales = estimate(this);
+//   }
+// }
+
+// const paris = {
+//   name: "Paris",
+//   minCustomersPerHour: 20,
+//   maxCustomersPerHour: 38,
+//   averageCookies: 2.3,
+//   estimatedSales: [],
+//   render: function() {
+//     renderStore(this);
+//   },
+//   estimate: function() {
+//     this.estimatedSales = estimate(this);
+//   }
+// }
+
+// const lima = {
+//   name: "Lima",
+//   minCustomersPerHour: 2,
+//   maxCustomersPerHour: 16,
+//   averageCookies: 4.6,
+//   estimatedSales: [],
+//   render: function() {
+//     renderStore(this);
+//   },
+//   estimate: function() {
+//     this.estimatedSales = estimate(this);
+//   }
+// }
+
+// function random(min,max) {
+//   return Math.floor( Math.random() * (max-min+1)) + min;
+// }
 
 // Based on the min/max and average
 // return an array of estimated sales per hour
-function estimate(store) {
-  let estimatedSales = [];
+// function estimate(store) {
+//   let estimatedSales = [];
   // loop over the hours array
   // for each, do the math and add that to the estimated sales
-  for( let i=0; i < hours.length; i++ ) {
-    const numCustomers = random( store.minCustomersPerHour, store.maxCustomersPerHour);
-    const hourlySales = Math.ceil(numCustomers * store.averageCookies);
-    estimatedSales.push( hourlySales );
-  }
-  return estimatedSales;
-}
-
-function renderStore( store ) {
-
-  console.log("In the renderStore(), store is: ", store);
-
-  // Looks for any element with an id="root", i.e.
-  // <section id="root">
-  const rootElement = document.getElementById("root");
-
-  // Create a new, empty section for a store
-  const storeSection = document.createElement("section");
-  rootElement.appendChild(storeSection);
-
-  const firstTitle = document.createElement("h2");
-  // Give it some content
-  firstTitle.textContent = store.name;
-  // Add it to the page, as a child of rootElement
-  storeSection.appendChild(firstTitle);
-
-  // Add a unordered list to show the address...
-  const storeDataList = document.createElement("ul");
-  storeSection.appendChild(storeDataList);
-
-  // Put the estimates in the UL
-  let total = 0;
-  for( let i=0; i < hours.length; i++ ) {
-    total += store.estimatedSales[i];
-    const est = document.createElement('li');
-    // Add the actual number, from the store object
-    est.textContent = `${hours[i]}: ${store.estimatedSales[i]}`
-    // Append that to the UL
-    storeDataList.appendChild(est);
-  }
-
-  const totalElement = document.createElement('li');
-  totalElement.textContent = `Total: ${total}`;
-  storeDataList.appendChild(totalElement);
-
-}
-
-
-// Way #1
-seattle.estimate();
-seattle.render();
-
-tokyo.estimate();
-tokyo.render();
-
-dubai.estimate();
-dubai.render();
-
-paris.estimate();
-paris.render();
-
-lima.estimate();
-lima.render();
-
-// Way #2
-// Make an array of stores and loop them.
-
-// Call the render function with different objects
-// let stores = [ seattle, tokyo ];
-
-// // Loop over the stores
-// for( let i=0; i < stores.length; i++ ) {
-//   stores[i].estimate();
-//   stores[i].render();
+//   for( let i=0; i < hours.length; i++ ) {
+//     const numCustomers = random( store.minCustomersPerHour, store.maxCustomersPerHour);
+//     const hourlySales = Math.ceil(numCustomers * store.averageCookies);
+//     estimatedSales.push( hourlySales );
+//   }
+//   return estimatedSales;
 // }
 
+// function renderStore( store ) {
+
+//   console.log("In the renderStore(), store is: ", store);
+
+//   // Looks for any element with an id="root", i.e.
+//   // <section id="root">
+//   const rootElement = document.getElementById("root");
+
+//   // Create a new, empty section for a store
+//   const storeSection = document.createElement("section");
+//   rootElement.appendChild(storeSection);
+
+//   const firstTitle = document.createElement("h2");
+//   // Give it some content
+//   firstTitle.textContent = store.name;
+//   // Add it to the page, as a child of rootElement
+//   storeSection.appendChild(firstTitle);
+
+//   // Add a unordered list to show the address...
+//   const storeDataList = document.createElement("ul");
+//   storeSection.appendChild(storeDataList);
+
+//   // Put the estimates in the UL
+//   let total = 0;
+//   for( let i=0; i < hours.length; i++ ) {
+//     total += store.estimatedSales[i];
+//     const est = document.createElement('li');
+//     // Add the actual number, from the store object
+//     est.textContent = `${hours[i]}: ${store.estimatedSales[i]}`
+//     // Append that to the UL
+//     storeDataList.appendChild(est);
+//   }
+
+//   const totalElement = document.createElement('li');
+//   totalElement.textContent = `Total: ${total}`;
+//   storeDataList.appendChild(totalElement);
+
+// }
+
+
+// // Way #1
+// seattle.estimate();
+// seattle.render();
+
+// tokyo.estimate();
+// tokyo.render();
+
+// dubai.estimate();
+// dubai.render();
+
+// paris.estimate();
+// paris.render();
+
+// lima.estimate();
+// lima.render();
+
+// // Way #2
+// // Make an array of stores and loop them.
+
+// // Call the render function with different objects
+// // let stores = [ seattle, tokyo ];
+
+// // // Loop over the stores
+// // for( let i=0; i < stores.length; i++ ) {
+// //   stores[i].estimate();
+// //   stores[i].render();
+// // }
+// }
 
