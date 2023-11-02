@@ -61,9 +61,26 @@ padding: 1em;
 text-align: center;
 }
 
+form {
+  border: 2px solid #111;
+  margin: 1em;
+  padding: .5em;
+}
+
+#newStoreForm input {
+  width: 125px;
+  height: 15px;
+  margin: .5em;
+}
+
+#newStoreForm legend {
+  color: salmon;
+  font-weight: bold;
+}
+
 table {
   margin: auto;
-  text-align: center;
+  text-align: center
 }
 
 table *{
