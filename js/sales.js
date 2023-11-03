@@ -1,5 +1,14 @@
 "use strict";
 // Thanks to the code review from Brendan on 11/1 in class, I was able to model after his code to get this working.
+
+// ---------------added lines 5-9 on 11/2/23 global variables---------------------------------
+let tableBody = document.getElementById("tableBody");
+let tableFooter = document.getElementById("tableFoot");
+let form = document.getElementById("newStoreForm")
+// Get all the inputs as an array
+let inputs = document.querySelectorAll("input");
+let newStore = {};
+
 let stores = [];
 let totals = new Array(14);
 totals.fill(0);
@@ -59,8 +68,8 @@ City.prototype.render = function(){
 };
 
 let renderTotals = function(){
+  tableFooter.innerHTML="";
 
-  let tableFooter = document.getElementById('tableFoot');
   let bottomTotal = document.createElement('tr');
   bottomTotal.textContent = 'Hourly Totals for all Locations';
   tableFooter.appendChild(bottomTotal);
@@ -94,3 +103,27 @@ renderTotals();
 
 
 console.log(totals);
+// -----------------------------------------------------------------------------new code 11/2/23 help from TA Kjell
+//Added event listener to retrieve the data that was entered
+// document.querySelectorAll (listed above as global variable) gives an array/list of the elements that match
+for(let i = 0; i < inputs.length; i++ ) {
+  inputs[i].addEventListener("change", function(event){
+    console.log(event.target.name, event.target.value);
+    newStore[event.target.name] = event.target.value
+  })
+
+}
+
+///Create event handler function that stores the values to display in the browser without going to server.
+form.addEventListener("submit", function(event){
+  event.preventDefault(); // Prevent form submission
+  console.log(event);
+let store = new City(newStore.cityName, parseInt(newStore.minCust), parseInt(newStore.maxCust), parseFloat(newStore.avgCookie));
+stores.push(store)
+store.cookieTime()
+store.render()
+renderTotals();
+})
+
+
+
