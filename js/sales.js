@@ -1,7 +1,7 @@
 "use strict";
 // Thanks to the code review from Brendan on 11/1 in class, I was able to model after his code to get this working.
 
-// ---------------added lines 5-9 on 11/2/23 global variables---------------------------------
+// ---------------added lines 5-10 on 11/2/23 global variables---------------------------------
 let tableBody = document.getElementById("tableBody");
 let tableFooter = document.getElementById("tableFoot");
 let form = document.getElementById("newStoreForm")
@@ -117,7 +117,8 @@ for(let i = 0; i < inputs.length; i++ ) {
 ///Create event handler function that stores the values to display in the browser without going to server.
 form.addEventListener("submit", function(event){
   event.preventDefault(); // Prevent form submission
-  console.log(event);
+  form.reset();
+
 let store = new City(newStore.cityName, parseInt(newStore.minCust), parseInt(newStore.maxCust), parseFloat(newStore.avgCookie));
 stores.push(store)
 store.cookieTime()
