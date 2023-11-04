@@ -10,6 +10,8 @@ Updated the Home page to display contact information and store hours for the fou
 
 Additional functionality added on 11/2/23 to add new locations to the table on the sales page. A form was created to collect user input and update the existing table.
 
+Customized fonts and styling added per design specification.
+
 ### Author: Jessica Hopkins
 
 ### Links and Resources
